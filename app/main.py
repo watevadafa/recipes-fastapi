@@ -9,4 +9,4 @@ app = FastAPI()
 def on_startup():
     create_db_and_tables()
 
-app.include_router(recipe_router, prefix="/api/v1/recipes")
+app.include_router(recipe_router, prefix="/recipes")
