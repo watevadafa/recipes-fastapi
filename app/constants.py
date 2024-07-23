@@ -3,4 +3,4 @@ MISSING_REQUIRED_FIELDS_ERROR = {
     "message": "Recipe creation failed!",
     "required": "title, making_time, serves, ingredients, cost",
 }
-RECIPE_NOT_FOUND_ERROR = { "message": "No recipe found" }
+RECIPE_NOT_FOUND_ERROR = {"message": "No recipe found"}

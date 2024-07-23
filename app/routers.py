@@ -70,7 +70,8 @@ def update_recipe_endpoint(
 
     updated_recipe = update_recipe(db, recipe_id, recipe.dict(exclude_unset=True))
     return RecipeResponseWithMessage(
-        message="Recipe successfully updated!", recipe=[RecipeInDBBase.from_orm(updated_recipe)]
+        message="Recipe successfully updated!",
+        recipe=[RecipeInDBBase.from_orm(updated_recipe)],
     )
 
 
