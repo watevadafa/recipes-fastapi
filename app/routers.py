@@ -58,7 +58,7 @@ def read_recipe(recipe_id: int, db: Session = Depends(get_session)):
     recipe = get_recipe(db, recipe_id)
 
     if not recipe:
-        raise HTTPException(status_code=404, detail="Recipe not found")
+        raise HTTPException(status_code=404, detail="No recipe found")
 
     return RecipeResponseWithMessage(
         message="Recipe details by id", recipe=[RecipeInDBBase.from_orm(recipe)]
@@ -85,4 +85,4 @@ def delete_recipe_endpoint(recipe_id: int, db: Session = Depends(get_session)):
     if not db_recipe:
         raise HTTPException(status_code=404, detail="Recipe not found")
     delete_recipe(db, recipe_id)
-    return {"ok": True}
+    return {"message": "Recipe successfully removed!"}
